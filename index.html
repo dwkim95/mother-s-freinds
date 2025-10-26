@@ -20,7 +20,6 @@
     .lead{margin:0 auto;color:#1f3b7a;opacity:.85;font-size:14px;line-height:1.8;max-width:36em}
     .actions{margin-top:14px;display:flex;gap:8px;justify-content:center}
     .btn{appearance:none;border:0;border-radius:999px;padding:10px 14px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 6px 14px rgba(30,64,175,.15)}
-    .btn.primary{background:var(--blue);color:#fff}
     .btn.ghost{background:#fff;color:var(--blue-800)}
     .section{background:var(--card);backdrop-filter:saturate(120%) blur(6px);border:1px solid #ffffff88;border-radius:18px;padding:16px 14px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
     .stack{display:flex;flex-direction:column;gap:22px}
@@ -33,6 +32,7 @@
     .time-clock{font-size:12px;color:#1e40af;font-weight:700}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .person{display:block;text-align:left;background:#dbeafe;border:1px solid #bfdbfe;border-radius:14px;padding:10px 12px;cursor:default}
+    .person.absent{background:#f3f4f6;border-color:#e5e7eb}
     .person .name{font-weight:700;font-size:15px;letter-spacing:.2px}
     .person .status{font-size:12px;color:var(--muted);margin-top:4px}
     table{width:100%;border-collapse:separate;border-spacing:0}
@@ -43,7 +43,6 @@
     .chips{white-space:nowrap}
     .chip{display:inline-block;border-radius:999px;font-size:12px;font-weight:700;padding:6px 10px;margin-right:6px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
     .chip.naver{background:#dbeafe;color:#1e40af}
-    .chip.kakao{background:#fef3c7;color:#92400e}
     footer{margin-top:30px;text-align:center;color:#274c9a99;font-size:11px;letter-spacing:.3px}
     .snow{position:fixed;inset:0;pointer-events:none;overflow:hidden}
     .flake{position:absolute;top:-10px;opacity:.6;animation:fall linear infinite}
@@ -58,17 +57,18 @@
       <h1>👮‍♀️ 오래된 우정, 다시 피어나는 시간</h1>
       <p class="lead">시경 형사과의 인연, 다시 하나로 모입니다.<br>마음을 나누고 웃음이 피어나는 따뜻한 밤이 되길 바랍니다.</p>
       <div class="actions">
-        <button class="btn primary" id="shareBtn">공유하기</button>
         <button class="btn ghost" id="copyBtn">링크복사</button>
       </div>
     </header>
 
     <div class="stack">
+      <!-- 모임 안내 -->
       <section class="section">
         <h2>🕔 모임 안내</h2>
-        <div class="muted">17시에 1차에서 시작합니다. 2차·카페는 자율 참여로 이동합니다.</div>
+        <div class="muted">17시에 1차 노리타에서 시작합니다.</div>
       </section>
 
+      <!-- 일정 -->
       <section class="section">
         <h2>📅 대략 일정</h2>
         <div class="timeline">
@@ -81,14 +81,14 @@
           </div>
           <div class="time-item">
             <div>
-              <div class="time-title">🍗 2차 (자율)</div>
-              <div class="time-sub">오늘통닭 / 강탄 / 교촌</div>
+              <div class="time-title">🍗 2차</div>
+              <div class="time-sub">오늘통닭 / 강탄 / 교촌치킨 강남</div>
             </div>
             <div class="time-clock">19:00</div>
           </div>
           <div class="time-item">
             <div>
-              <div class="time-title">☕ 카페 (자율)</div>
+              <div class="time-title">☕ 카페</div>
               <div class="time-sub">투썸플레이스 강남역중앙점</div>
             </div>
             <div class="time-clock">21:00</div>
@@ -96,18 +96,24 @@
         </div>
       </section>
 
+      <!-- 참석자 -->
       <section class="section">
         <h2>👥 참석자</h2>
         <div class="grid">
+          <!-- 참석(6) -->
           <div class="person"><div class="name">👩🏻 윤명순 <small class="muted">(회장)</small></div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 표정희</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 유인숙</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 이명경</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 박진숙</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 정윤호</div><div class="status">상태: 참석</div></div>
+          <!-- 불참(2) -->
+          <div class="person absent"><div class="name">👩🏻 이근미</div><div class="status">상태: 불참</div></div>
+          <div class="person absent"><div class="name">👩🏻 김선수</div><div class="status">상태: 불참</div></div>
         </div>
       </section>
 
+      <!-- 장소 안내 -->
       <section class="section">
         <h2>🗺️ 장소 안내</h2>
         <div style="overflow:hidden;border:1px solid #e5e7eb;border-radius:14px">
@@ -116,44 +122,44 @@
               <tr><th>구분</th><th>이름</th><th>길찾기</th></tr>
             </thead>
             <tbody>
+              <!-- [1차] 노리타 -->
               <tr>
                 <td>1차</td>
-                <td>노리타<br><span class="muted">서울 강남구 강남대로 428</span></td>
+                <td>노리타<br><span class="muted">서울 강남구 강남대로 428 3층 2-301호</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C%20428">네이버</a>
-                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C%20428">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울%20강남구%20강남대로%20428%203층%202-301호">네이버</a>
                 </td>
               </tr>
+              <!-- [2차] 오늘통닭 -->
               <tr>
                 <td>2차</td>
                 <td>오늘통닭<br><span class="muted">서울특별시 서초구 서초동 1327-33 비트빌빌딩 1층</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%84%9C%EC%B4%88%EB%8F%99%201327-33%20%EB%B9%84%ED%8A%B8%EB%B9%8C%EB%B9%8C%EB%94%A9%201%EC%B8%B5">네이버</a>
-                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%84%9C%EC%B4%88%EB%8F%99%201327-33%20%EB%B9%84%ED%8A%B8%EB%B9%8C%EB%B9%8C%EB%94%A9%201%EC%B8%B5">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울특별시%20서초구%20서초동%201327-33%20비트빌빌딩%201층">네이버</a>
                 </td>
               </tr>
+              <!-- [2차] 강탄 -->
               <tr>
                 <td>2차</td>
-                <td>강탄 강남역점<br><span class="muted">서울 강남구 테헤란로1길 28-4 JWHouse 2층</span></td>
+                <td>강탄<br><span class="muted">서울 강남구 테헤란로1길 28-4 JWHouse 2층 강탄 강남역점</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2028-4">네이버</a>
-                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2028-4">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울%20강남구%20테헤란로1길%2028-4%20JWHouse%202층%20강탄%20강남역점">네이버</a>
                 </td>
               </tr>
+              <!-- [2차] 교촌치킨 강남 -->
               <tr>
                 <td>2차</td>
                 <td>교촌치킨 강남<br><span class="muted">서울특별시 강남구 역삼동 619-28 1층</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%97%AD%EC%82%BC%EB%8F%99%20619-28%201%EC%B8%B5">네이버</a>
-                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%97%AD%EC%82%BC%EB%8F%99%20619-28%201%EC%B8%B5">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울특별시%20강남구%20역삼동%20619-28%201층">네이버</a>
                 </td>
               </tr>
+              <!-- [카페] 투썸 -->
               <tr>
                 <td>카페</td>
                 <td>투썸플레이스 강남역중앙점<br><span class="muted">서울 강남구 테헤란로1길 16 삼원빌딩</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2016%20%EC%82%BC%EC%9B%90%EB%B9%8C%EB%94%A9">네이버</a>
-                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2016%20%EC%82%BC%EC%9B%90%EB%B9%8C%EB%94%A9">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울%20강남구%20테헤란로1길%2016%20삼원빌딩">네이버</a>
                 </td>
               </tr>
             </tbody>
@@ -183,14 +189,12 @@
       }
     })();
 
-    // 공유 & 복사
-    document.getElementById('shareBtn').addEventListener('click', async ()=>{
-      const data={title:'시형회 연말모임 안내', text:'시경 형사과 동기 모임 안내', url:location.href};
-      if(navigator.share){ try{ await navigator.share(data);}catch(e){} }
-      else{ try{ await navigator.clipboard.writeText(location.href); alert('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유해주세요!'); }catch(e){} }
-    });
+    // 링크복사만 유지
     document.getElementById('copyBtn').addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText(location.href); alert('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유해주세요!'); }catch(e){}
+      try{
+        await navigator.clipboard.writeText(location.href);
+        alert('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유해주세요!');
+      }catch(e){}
     });
   </script>
 </body>
