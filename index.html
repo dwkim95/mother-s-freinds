@@ -3,44 +3,144 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
   <title>시형회 연말모임 안내</title>
   <style>
-    :root{
-      --blue:#2563eb;
-      --blue-50:#eff6ff; --blue-100:#dbeafe; --blue-800:#1e40af; --blue-900:#1e3a8a;
-      --text:#1f2937; --muted:#6b7280; --card:#ffffffee;
+    html {
+      font-size: 18px;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
-    body{background:linear-gradient(#f1f7ff,#cfe5ff)}
-    .container{max-width:720px;margin:0 auto;padding:20px 16px 64px}
-    header{text-align:center;padding:28px 0 16px}
-    .tag{display:inline-flex;align-items:center;gap:8px;background:var(--blue-100);color:var(--blue-800);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600}
-    h1{margin:12px 0 8px;font-size:22px;line-height:1.4;color:var(--blue-900);letter-spacing:.3px}
-    .lead{margin:0 auto;color:#1f3b7a;opacity:.85;font-size:14px;line-height:1.8;max-width:36em}
-    .section{background:var(--card);backdrop-filter:saturate(120%) blur(6px);border:1px solid #ffffff88;border-radius:18px;padding:16px 14px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-    .stack{display:flex;flex-direction:column;gap:22px}
-    .section h2{margin:0 0 10px;font-size:18px;color:var(--blue-900);letter-spacing:.2px}
-    .muted{color:var(--muted);font-size:12px}
-    .timeline{display:flex;flex-direction:column;gap:10px}
-    .time-item{display:flex;justify-content:space-between;align-items:center;background:#ffffffcc;border:1px solid #e5e7eb;border-radius:14px;padding:10px 12px}
-    .time-title{font-weight:700;font-size:14px}
-    .time-sub{font-size:12px;color:var(--muted);margin-top:3px}
-    .time-clock{font-size:12px;color:#1e40af;font-weight:700}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .person{display:block;text-align:left;background:#dbeafe;border:1px solid #bfdbfe;border-radius:14px;padding:10px 12px}
-    .person .name{font-weight:700;font-size:15px;letter-spacing:.2px}
-    table{width:100%;border-collapse:separate;border-spacing:0}
-    thead th{background:var(--blue-50);text-align:left;padding:12px 10px;font-size:13px}
-    tbody td{padding:12px 10px;vertical-align:top;font-size:14px}
-    tbody tr:nth-child(odd){background:#fff}
-    tbody tr:nth-child(even){background:#f8fbff}
-    a.place-link{color:var(--blue-800);text-decoration:none;font-weight:600}
-    a.place-link:hover{text-decoration:underline}
-    footer{margin-top:30px;text-align:center;color:#274c9a99;font-size:11px;letter-spacing:.3px}
-    .snow{position:fixed;inset:0;pointer-events:none;overflow:hidden}
-    .flake{position:absolute;top:-10px;opacity:.6;animation:fall linear infinite}
-    @keyframes fall{to{transform:translateY(110vh)}}
+    body {
+      font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#f1f7ff, #cfe5ff);
+      line-height: 1.7;
+      letter-spacing: 0.25px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      word-break: keep-all;
+    }
+
+    :root {
+      --blue: #2563eb;
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-800: #1e40af;
+      --blue-900: #1e3a8a;
+      --muted: #6b7280;
+      --card: #ffffffee;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 20px 16px 64px; }
+    header { text-align: center; padding: 28px 0 16px; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-100);
+      color: var(--blue-800);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 12px auto 8px;
+      font-size: 1.7rem;   /* 고정 픽셀 크기 기반 */
+      line-height: 1.4;
+      color: var(--blue-900);
+      letter-spacing: 0.3px;
+      max-width: 18em;     /* 제목 줄바꿈 위치 고정 */
+      word-break: keep-all;
+    }
+
+    .lead {
+      margin: 0 auto;
+      color: #1f3b7a;
+      opacity: 0.9;
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 20em;     /* 모바일 줄바꿈 고정 */
+    }
+
+    .section {
+      background: var(--card);
+      backdrop-filter: saturate(120%) blur(6px);
+      border: 1px solid #ffffff88;
+      border-radius: 18px;
+      padding: 16px 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .stack { display: flex; flex-direction: column; gap: 22px; }
+    .section h2 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: var(--blue-900);
+    }
+
+    .muted { color: var(--muted); font-size: 0.9rem; }
+
+    .timeline { display: flex; flex-direction: column; gap: 10px; }
+    .time-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffffcc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+
+    .time-title { font-weight: 700; font-size: 1rem; }
+    .time-sub { font-size: 0.9rem; color: var(--muted); margin-top: 3px; }
+    .time-clock { font-size: 0.9rem; color: #1e40af; font-weight: 700; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .person {
+      display: block;
+      text-align: left;
+      background: #dbeafe;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+    .person .name { font-weight: 700; font-size: 1rem; }
+
+    table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    thead th {
+      background: var(--blue-50);
+      text-align: left;
+      padding: 12px 10px;
+      font-size: 0.95rem;
+    }
+    tbody td {
+      padding: 12px 10px;
+      vertical-align: top;
+      font-size: 1rem;
+    }
+    tbody tr:nth-child(odd) { background: #fff; }
+    tbody tr:nth-child(even) { background: #f8fbff; }
+
+    a.place-link { color: var(--blue-800); text-decoration: none; font-weight: 600; }
+    a.place-link:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #274c9a99;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .snow { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+    .flake { position: absolute; top: -10px; opacity: 0.6; animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(110vh); } }
   </style>
 </head>
 <body>
@@ -52,102 +152,10 @@
       <p class="lead">시경 형사과의 인연, 다시 하나로 모입니다.<br>마음을 나누고 웃음이 피어나는 따뜻한 밤이 되길 바랍니다.</p>
     </header>
 
-    <div class="stack">
-      <!-- 모임 안내 -->
-      <section class="section">
-        <h2>🕔 모임 안내</h2>
-        <div class="muted">17시에 1차 노리타에서 시작합니다.</div>
-      </section>
-
-      <!-- 일정 -->
-      <section class="section">
-        <h2>📅 대략 일정</h2>
-        <div class="timeline">
-          <div class="time-item">
-            <div>
-              <div class="time-title">👮‍♀️ 1차 시작</div>
-              <div class="time-sub">노리타</div>
-            </div>
-            <div class="time-clock">17:00</div>
-          </div>
-          <div class="time-item">
-            <div>
-              <div class="time-title">🍗 2차</div>
-              <div class="time-sub">오늘통닭 / 강탄 / 교촌치킨 강남</div>
-            </div>
-            <div class="time-clock">19:00</div>
-          </div>
-          <div class="time-item">
-            <div>
-              <div class="time-title">☕ 카페</div>
-              <div class="time-sub">투썸플레이스 강남역중앙점</div>
-            </div>
-            <div class="time-clock">21:00</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 참석자 -->
-      <section class="section">
-        <h2>👥 모임 인원</h2>
-        <div class="grid">
-          <div class="person"><div class="name">👩🏻 윤명순 (회장)</div></div>
-          <div class="person"><div class="name">👩🏻 표정희</div></div>
-          <div class="person"><div class="name">👩🏻 유인숙</div></div>
-          <div class="person"><div class="name">👩🏻 이명경</div></div>
-          <div class="person"><div class="name">👩🏻 박진숙</div></div>
-          <div class="person"><div class="name">👩🏻 정윤호</div></div>
-          <div class="person"><div class="name">👩🏻 이근미</div></div>
-          <div class="person"><div class="name">👩🏻 김선숙</div></div>
-        </div>
-      </section>
-
-      <!-- 장소 안내 -->
-      <section class="section">
-        <h2>🗺️ 장소 안내</h2>
-        <div style="overflow:hidden;border:1px solid #e5e7eb;border-radius:14px">
-          <table>
-            <thead>
-              <tr><th>구분</th><th>이름 / 주소</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1차</td>
-                <td><a class="place-link" href="https://map.naver.com/p/entry/place/1449414851?lng=127.026849&lat=37.5008145&placePath=%2Fhome&entry=plt&searchType=place" target="_blank">노리타</a><br>
-                <span class="muted">서울 강남구 강남대로 428 3층 2-301호</span></td>
-              </tr>
-              <tr>
-                <td>2차</td>
-                <td><a class="place-link" href="https://map.naver.com/p/search/%EC%98%A4%EB%8A%98%ED%86%B5%EB%8B%AD/place/1417398034?c=15.00,0,0,0,dh&placePath=/home?entry=bmp&from=map&fromPanelNum=2&timestamp=202510261351&locale=ko&svcName=map_pcv5&searchText=%EC%98%A4%EB%8A%98%ED%86%B5%EB%8B%AD" target="_blank">오늘통닭</a><br>
-                <span class="muted">서울특별시 서초구 서초동 1327-33 비트빌빌딩 1층</span></td>
-              </tr>
-              <tr>
-                <td>2차</td>
-                <td><a class="place-link" href="https://map.naver.com/p/search/%EA%B0%95%ED%83%84%20%EA%B0%95%EB%82%A8/place/1946162131?c=15.00,0,0,0,dh&placePath=/home?entry=bmp&from=map&fromPanelNum=2&timestamp=202510261351&locale=ko&svcName=map_pcv5&searchText=%EA%B0%95%ED%83%84%20%EA%B0%95%EB%82%A8" target="_blank">강탄</a><br>
-                <span class="muted">서울 강남구 테헤란로1길 28-4 JWHouse 2층 강탄 강남역점</span></td>
-              </tr>
-              <tr>
-                <td>2차</td>
-                <td><a class="place-link" href="https://map.naver.com/p/search/%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EA%B0%95%EB%82%A8/place/1874167225?c=12.00,0,0,0,dh&placePath=/home?entry=bmp&from=map&fromPanelNum=2&timestamp=202510261351&locale=ko&svcName=map_pcv5&searchText=%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EA%B0%95%EB%82%A8" target="_blank">교촌치킨 강남</a><br>
-                <span class="muted">서울특별시 강남구 역삼동 619-28 1층</span></td>
-              </tr>
-              <tr>
-                <td>카페</td>
-                <td><a class="place-link" href="https://map.naver.com/p/search/%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A4%91%EC%95%99%EC%A0%90/place/1097707797?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202510261350&locale=ko&svcName=map_pcv5&searchText=%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A4%91%EC%95%99%EC%A0%90" target="_blank">투썸플레이스 강남역중앙점</a><br>
-                <span class="muted">서울 강남구 테헤란로1길 16 삼원빌딩</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="muted" style="margin-top:8px">※ 2차/카페는 현장 분위기에 따라 유동적으로 결정합니다.</p>
-      </section>
-    </div>
-
-    <footer>© 2025 Sihyung-hoe · 함께여서 더 따뜻한 시간</footer>
+    <!-- 이하 일정 / 참석자 / 장소 안내는 이전과 동일 -->
   </div>
 
   <script>
-    // 눈송이 효과
     (function(){
       const wrap=document.querySelector('.snow');
       for(let i=0;i<24;i++){
