@@ -6,45 +6,35 @@
   <title>시형회 연말모임 안내</title>
   <style>
     :root{
-      --blue:#2563eb; /* 버튼 파랑 */
+      --blue:#2563eb;
       --blue-50:#eff6ff; --blue-100:#dbeafe; --blue-800:#1e40af; --blue-900:#1e3a8a;
-      --text:#1f2937; --muted:#6b7280; --card:#ffffffee; --bg1:#f1f7ff; --bg2:#cfe5ff;
+      --text:#1f2937; --muted:#6b7280; --card:#ffffffee;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);}
-    body{background:linear-gradient(#f1f7ff,#cfe5ff);}
-    .container{max-width:720px;margin:0 auto;padding:20px 16px 64px;}
+    html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
+    body{background:linear-gradient(#f1f7ff,#cfe5ff)}
+    .container{max-width:720px;margin:0 auto;padding:20px 16px 64px}
     header{text-align:center;padding:28px 0 16px}
     .tag{display:inline-flex;align-items:center;gap:8px;background:var(--blue-100);color:var(--blue-800);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600}
     h1{margin:12px 0 8px;font-size:22px;line-height:1.4;color:var(--blue-900);letter-spacing:.3px}
     .lead{margin:0 auto;color:#1f3b7a;opacity:.85;font-size:14px;line-height:1.8;max-width:36em}
-
     .actions{margin-top:14px;display:flex;gap:8px;justify-content:center}
     .btn{appearance:none;border:0;border-radius:999px;padding:10px 14px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 6px 14px rgba(30,64,175,.15)}
     .btn.primary{background:var(--blue);color:#fff}
     .btn.ghost{background:#fff;color:var(--blue-800)}
-
     .section{background:var(--card);backdrop-filter:saturate(120%) blur(6px);border:1px solid #ffffff88;border-radius:18px;padding:16px 14px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
     .stack{display:flex;flex-direction:column;gap:22px}
     .section h2{margin:0 0 10px;font-size:18px;color:var(--blue-900);letter-spacing:.2px}
-    .row{display:flex;gap:10px;align-items:flex-start}
-    .icon{width:22px;height:22px;color:var(--blue-800);margin-top:2px}
     .muted{color:var(--muted);font-size:12px}
-
     .timeline{display:flex;flex-direction:column;gap:10px}
     .time-item{display:flex;justify-content:space-between;align-items:center;background:#ffffffcc;border:1px solid #e5e7eb;border-radius:14px;padding:10px 12px}
     .time-title{font-weight:700;font-size:14px}
     .time-sub{font-size:12px;color:var(--muted);margin-top:3px}
-    .time-clock{font-size:12px;color:var(--blue-800);font-weight:700}
-
+    .time-clock{font-size:12px;color:#1e40af;font-weight:700}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .person{display:block;text-align:left;background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:10px 12px}
+    .person{display:block;text-align:left;background:#dbeafe;border:1px solid #bfdbfe;border-radius:14px;padding:10px 12px;cursor:default}
     .person .name{font-weight:700;font-size:15px;letter-spacing:.2px}
     .person .status{font-size:12px;color:var(--muted);margin-top:4px}
-    .person[ data-status="참석" ]{background:#dbeafe;border-color:#bfdbfe}
-    .person[ data-status="미정" ]{background:#fef3c7;border-color:#fde68a}
-    .person[ data-status="불참" ]{background:#f3f4f6;border-color:#e5e7eb}
-
     table{width:100%;border-collapse:separate;border-spacing:0}
     thead th{background:var(--blue-50);text-align:left;padding:12px 10px;font-size:13px}
     tbody td{padding:12px 10px;vertical-align:top;font-size:14px}
@@ -52,12 +42,9 @@
     tbody tr:nth-child(even){background:#f8fbff}
     .chips{white-space:nowrap}
     .chip{display:inline-block;border-radius:999px;font-size:12px;font-weight:700;padding:6px 10px;margin-right:6px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
-    .chip.naver{background:var(--blue-100);color:var(--blue-800)}
+    .chip.naver{background:#dbeafe;color:#1e40af}
     .chip.kakao{background:#fef3c7;color:#92400e}
-
     footer{margin-top:30px;text-align:center;color:#274c9a99;font-size:11px;letter-spacing:.3px}
-
-    /* 작은 눈 내림 효과 */
     .snow{position:fixed;inset:0;pointer-events:none;overflow:hidden}
     .flake{position:absolute;top:-10px;opacity:.6;animation:fall linear infinite}
     @keyframes fall{to{transform:translateY(110vh)}}
@@ -77,15 +64,11 @@
     </header>
 
     <div class="stack">
-      <!-- 안내 -->
       <section class="section">
         <h2>🕔 모임 안내</h2>
-        <div class="row">
-          <div class="muted">17시에 1차에서 시작합니다. 2차·카페는 자율 참여로 이동합니다.</div>
-        </div>
+        <div class="muted">17시에 1차에서 시작합니다. 2차·카페는 자율 참여로 이동합니다.</div>
       </section>
 
-      <!-- 일정 -->
       <section class="section">
         <h2>📅 대략 일정</h2>
         <div class="timeline">
@@ -113,70 +96,64 @@
         </div>
       </section>
 
-      <!-- 참석자 -->
       <section class="section">
-        <h2>👥 참석자 (탭해서 상태 변경)</h2>
-        <div class="grid" id="attendeeGrid">
-          <button class="person" data-status="참석"><div class="name">👩🏻 윤명순 <small class="muted">(회장)</small></div><div class="status">상태: 참석</div></button>
-          <button class="person" data-status="참석"><div class="name">👩🏻 표정희</div><div class="status">상태: 참석</div></button>
-          <button class="person" data-status="참석"><div class="name">👩🏻 유인숙</div><div class="status">상태: 참석</div></button>
-          <button class="person" data-status="참석"><div class="name">👩🏻 이명경</div><div class="status">상태: 참석</div></button>
-          <button class="person" data-status="참석"><div class="name">👩🏻 박진숙</div><div class="status">상태: 참석</div></button>
-          <button class="person" data-status="참석"><div class="name">👩🏻 정윤호</div><div class="status">상태: 참석</div></button>
+        <h2>👥 참석자</h2>
+        <div class="grid">
+          <div class="person"><div class="name">👩🏻 윤명순 <small class="muted">(회장)</small></div><div class="status">상태: 참석</div></div>
+          <div class="person"><div class="name">👩🏻 표정희</div><div class="status">상태: 참석</div></div>
+          <div class="person"><div class="name">👩🏻 유인숙</div><div class="status">상태: 참석</div></div>
+          <div class="person"><div class="name">👩🏻 이명경</div><div class="status">상태: 참석</div></div>
+          <div class="person"><div class="name">👩🏻 박진숙</div><div class="status">상태: 참석</div></div>
+          <div class="person"><div class="name">👩🏻 정윤호</div><div class="status">상태: 참석</div></div>
         </div>
       </section>
 
-      <!-- 장소 -->
       <section class="section">
         <h2>🗺️ 장소 안내</h2>
         <div style="overflow:hidden;border:1px solid #e5e7eb;border-radius:14px">
           <table>
             <thead>
-              <tr>
-                <th>구분</th>
-                <th>이름</th>
-                <th>길찾기</th>
-              </tr>
+              <tr><th>구분</th><th>이름</th><th>길찾기</th></tr>
             </thead>
             <tbody>
               <tr>
                 <td>1차</td>
-                <td>노리타<br><span class="muted">서울 강남구 강남대로 428 3층 2-301호</span></td>
+                <td>노리타<br><span class="muted">서울 강남구 강남대로 428</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" rel="noreferrer" href="https://map.naver.com/v5/search/%EB%85%B8%EB%A6%AC%ED%83%80%20%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C%20428%203%EC%B8%B5%202-301%ED%98%B8">네이버</a>
-                  <a class="chip kakao" target="_blank" rel="noreferrer" href="https://map.kakao.com/link/search/%EB%85%B8%EB%A6%AC%ED%83%80%20%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C%20428%203%EC%B8%B5%202-301%ED%98%B8">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C%20428">네이버</a>
+                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C%20428">카카오</a>
                 </td>
               </tr>
               <tr>
                 <td>2차</td>
-                <td>오늘통닭<br><span class="muted">서울 서초구 서초동 1327-33 비트빌빌딩 1층</span></td>
+                <td>오늘통닭<br><span class="muted">서울특별시 서초구 서초동 1327-33 비트빌빌딩 1층</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" rel="noreferrer" href="https://map.naver.com/v5/search/%EC%98%A4%EB%8A%98%ED%86%B5%EB%8B%AD%20%EC%84%9C%EC%B4%88%EB%8F%99%201327-33">네이버</a>
-                  <a class="chip kakao" target="_blank" rel="noreferrer" href="https://map.kakao.com/link/search/%EC%98%A4%EB%8A%98%ED%86%B5%EB%8B%AD%20%EC%84%9C%EC%B4%88%EB%8F%99%201327-33">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%84%9C%EC%B4%88%EB%8F%99%201327-33%20%EB%B9%84%ED%8A%B8%EB%B9%8C%EB%B9%8C%EB%94%A9%201%EC%B8%B5">네이버</a>
+                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%84%9C%EC%B4%88%EB%8F%99%201327-33%20%EB%B9%84%ED%8A%B8%EB%B9%8C%EB%B9%8C%EB%94%A9%201%EC%B8%B5">카카오</a>
                 </td>
               </tr>
               <tr>
                 <td>2차</td>
-                <td>강탄(강남역점)<br><span class="muted">서울 강남구 테헤란로1길 28-4 JWHouse 2층</span></td>
+                <td>강탄 강남역점<br><span class="muted">서울 강남구 테헤란로1길 28-4 JWHouse 2층</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" rel="noreferrer" href="https://map.naver.com/v5/search/%EA%B0%95%ED%83%84%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A0%90%20%ED%85%8C%ED%97%A8%EB%A1%9C1%EA%B8%B8%2028-4">네이버</a>
-                  <a class="chip kakao" target="_blank" rel="noreferrer" href="https://map.kakao.com/link/search/%EA%B0%95%ED%83%84%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A0%90%20%ED%85%8C%ED%97%A8%EB%A1%9C1%EA%B8%B8%2028-4">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2028-4">네이버</a>
+                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2028-4">카카오</a>
                 </td>
               </tr>
               <tr>
                 <td>2차</td>
-                <td>교촌치킨 강남<br><span class="muted">서울 강남구 역삼동 619-28 1층</span></td>
+                <td>교촌치킨 강남<br><span class="muted">서울특별시 강남구 역삼동 619-28 1층</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" rel="noreferrer" href="https://map.naver.com/v5/search/%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EA%B0%95%EB%82%A8%20%EC%97%AD%EC%82%BC%EB%8F%99%20619-28">네이버</a>
-                  <a class="chip kakao" target="_blank" rel="noreferrer" href="https://map.kakao.com/link/search/%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EA%B0%95%EB%82%A8%20%EC%97%AD%EC%82%BC%EB%8F%99%20619-28">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%97%AD%EC%82%BC%EB%8F%99%20619-28%201%EC%B8%B5">네이버</a>
+                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%97%AD%EC%82%BC%EB%8F%99%20619-28%201%EC%B8%B5">카카오</a>
                 </td>
               </tr>
               <tr>
                 <td>카페</td>
                 <td>투썸플레이스 강남역중앙점<br><span class="muted">서울 강남구 테헤란로1길 16 삼원빌딩</span></td>
                 <td class="chips">
-                  <a class="chip naver" target="_blank" rel="noreferrer" href="https://map.naver.com/v5/search/%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A4%91%EC%95%99%EC%A0%90">네이버</a>
-                  <a class="chip kakao" target="_blank" rel="noreferrer" href="https://map.kakao.com/link/search/%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A4%91%EC%95%99%EC%A0%90">카카오</a>
+                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2016%20%EC%82%BC%EC%9B%90%EB%B9%8C%EB%94%A9">네이버</a>
+                  <a class="chip kakao" target="_blank" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%ED%85%8C%ED%97%A8%EB%9D%BC1%EA%B8%B8%2016%20%EC%82%BC%EC%9B%90%EB%B9%8C%EB%94%A9">카카오</a>
                 </td>
               </tr>
             </tbody>
@@ -186,11 +163,11 @@
       </section>
     </div>
 
-    <footer>© 2025 Sihyung‑hoe · 함께여서 더 따뜻한 시간</footer>
+    <footer>© 2025 Sihyung-hoe · 함께여서 더 따뜻한 시간</footer>
   </div>
 
   <script>
-    // 간단한 눈송이 효과
+    // 눈송이 효과
     (function(){
       const wrap=document.querySelector('.snow');
       for(let i=0;i<24;i++){
@@ -198,8 +175,7 @@
         f.className='flake';
         f.textContent='❄️';
         f.style.left=Math.random()*100+'vw';
-        const d=6+Math.random()*8; // duration
-        const delay=Math.random()*8;
+        const d=6+Math.random()*8, delay=Math.random()*8;
         f.style.animationDuration=d+'s';
         f.style.animationDelay=delay+'s';
         f.style.fontSize=(8+Math.random()*10)+'px';
@@ -209,24 +185,12 @@
 
     // 공유 & 복사
     document.getElementById('shareBtn').addEventListener('click', async ()=>{
-      const data={title:'시형회 연말모임 안내', text:'시경 형사과 동기 모임 안내 페이지', url:location.href};
+      const data={title:'시형회 연말모임 안내', text:'시경 형사과 동기 모임 안내', url:location.href};
       if(navigator.share){ try{ await navigator.share(data);}catch(e){} }
       else{ try{ await navigator.clipboard.writeText(location.href); alert('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유해주세요!'); }catch(e){} }
     });
     document.getElementById('copyBtn').addEventListener('click', async ()=>{
       try{ await navigator.clipboard.writeText(location.href); alert('링크가 복사되었습니다. 카카오톡에 붙여넣어 공유해주세요!'); }catch(e){}
-    });
-
-    // 참석자 상태 토글(참석 → 미정 → 불참)
-    const grid=document.getElementById('attendeeGrid');
-    grid.querySelectorAll('.person').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const order=['참석','미정','불참'];
-        const cur=btn.getAttribute('data-status')||'참석';
-        const next=order[(order.indexOf(cur)+1)%order.length];
-        btn.setAttribute('data-status',next);
-        btn.querySelector('.status').textContent='상태: '+next;
-      });
     });
   </script>
 </body>
