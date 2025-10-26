@@ -40,9 +40,8 @@
     tbody td{padding:12px 10px;vertical-align:top;font-size:14px}
     tbody tr:nth-child(odd){background:#fff}
     tbody tr:nth-child(even){background:#f8fbff}
-    .chips{white-space:nowrap}
-    .chip{display:inline-block;border-radius:999px;font-size:12px;font-weight:700;padding:6px 10px;margin-right:6px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
-    .chip.naver{background:#dbeafe;color:#1e40af}
+    a.place-link{color:var(--blue-800);text-decoration:none;font-weight:600}
+    a.place-link:hover{text-decoration:underline}
     footer{margin-top:30px;text-align:center;color:#274c9a99;font-size:11px;letter-spacing:.3px}
     .snow{position:fixed;inset:0;pointer-events:none;overflow:hidden}
     .flake{position:absolute;top:-10px;opacity:.6;animation:fall linear infinite}
@@ -100,14 +99,14 @@
       <section class="section">
         <h2>👥 참석자</h2>
         <div class="grid">
-          <!-- 참석(6) -->
+          <!-- 참석 -->
           <div class="person"><div class="name">👩🏻 윤명순 <small class="muted">(회장)</small></div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 표정희</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 유인숙</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 이명경</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 박진숙</div><div class="status">상태: 참석</div></div>
           <div class="person"><div class="name">👩🏻 정윤호</div><div class="status">상태: 참석</div></div>
-          <!-- 불참(2) -->
+          <!-- 불참 -->
           <div class="person absent"><div class="name">👩🏻 이근미</div><div class="status">상태: 불참</div></div>
           <div class="person absent"><div class="name">👩🏻 김선수</div><div class="status">상태: 불참</div></div>
         </div>
@@ -119,48 +118,33 @@
         <div style="overflow:hidden;border:1px solid #e5e7eb;border-radius:14px">
           <table>
             <thead>
-              <tr><th>구분</th><th>이름</th><th>길찾기</th></tr>
+              <tr><th>구분</th><th>이름 / 주소</th></tr>
             </thead>
             <tbody>
-              <!-- [1차] 노리타 -->
               <tr>
                 <td>1차</td>
-                <td>노리타<br><span class="muted">서울 강남구 강남대로 428 3층 2-301호</span></td>
-                <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울%20강남구%20강남대로%20428%203층%202-301호">네이버</a>
-                </td>
+                <td><a class="place-link" href="https://map.naver.com/p/entry/place/1449414851?lng=127.026849&lat=37.5008145&placePath=%2Fhome&entry=plt&searchType=place" target="_blank">노리타</a><br>
+                <span class="muted">서울 강남구 강남대로 428 3층 2-301호</span></td>
               </tr>
-              <!-- [2차] 오늘통닭 -->
               <tr>
                 <td>2차</td>
-                <td>오늘통닭<br><span class="muted">서울특별시 서초구 서초동 1327-33 비트빌빌딩 1층</span></td>
-                <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울특별시%20서초구%20서초동%201327-33%20비트빌빌딩%201층">네이버</a>
-                </td>
+                <td><a class="place-link" href="https://map.naver.com/p/search/%EC%98%A4%EB%8A%98%ED%86%B5%EB%8B%AD/place/1417398034?c=15.00,0,0,0,dh&placePath=/home?entry=bmp&from=map&fromPanelNum=2&timestamp=202510261351&locale=ko&svcName=map_pcv5&searchText=%EC%98%A4%EB%8A%98%ED%86%B5%EB%8B%AD" target="_blank">오늘통닭</a><br>
+                <span class="muted">서울특별시 서초구 서초동 1327-33 비트빌빌딩 1층</span></td>
               </tr>
-              <!-- [2차] 강탄 -->
               <tr>
                 <td>2차</td>
-                <td>강탄<br><span class="muted">서울 강남구 테헤란로1길 28-4 JWHouse 2층 강탄 강남역점</span></td>
-                <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울%20강남구%20테헤란로1길%2028-4%20JWHouse%202층%20강탄%20강남역점">네이버</a>
-                </td>
+                <td><a class="place-link" href="https://map.naver.com/p/search/%EA%B0%95%ED%83%84%20%EA%B0%95%EB%82%A8/place/1946162131?c=15.00,0,0,0,dh&placePath=/home?entry=bmp&from=map&fromPanelNum=2&timestamp=202510261351&locale=ko&svcName=map_pcv5&searchText=%EA%B0%95%ED%83%84%20%EA%B0%95%EB%82%A8" target="_blank">강탄</a><br>
+                <span class="muted">서울 강남구 테헤란로1길 28-4 JWHouse 2층 강탄 강남역점</span></td>
               </tr>
-              <!-- [2차] 교촌치킨 강남 -->
               <tr>
                 <td>2차</td>
-                <td>교촌치킨 강남<br><span class="muted">서울특별시 강남구 역삼동 619-28 1층</span></td>
-                <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울특별시%20강남구%20역삼동%20619-28%201층">네이버</a>
-                </td>
+                <td><a class="place-link" href="https://map.naver.com/p/search/%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EA%B0%95%EB%82%A8/place/1874167225?c=12.00,0,0,0,dh&placePath=/home?entry=bmp&from=map&fromPanelNum=2&timestamp=202510261351&locale=ko&svcName=map_pcv5&searchText=%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%EA%B0%95%EB%82%A8" target="_blank">교촌치킨 강남</a><br>
+                <span class="muted">서울특별시 강남구 역삼동 619-28 1층</span></td>
               </tr>
-              <!-- [카페] 투썸 -->
               <tr>
                 <td>카페</td>
-                <td>투썸플레이스 강남역중앙점<br><span class="muted">서울 강남구 테헤란로1길 16 삼원빌딩</span></td>
-                <td class="chips">
-                  <a class="chip naver" target="_blank" href="https://map.naver.com/v5/search/서울%20강남구%20테헤란로1길%2016%20삼원빌딩">네이버</a>
-                </td>
+                <td><a class="place-link" href="https://map.naver.com/p/search/%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A4%91%EC%95%99%EC%A0%90/place/1097707797?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202510261350&locale=ko&svcName=map_pcv5&searchText=%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EA%B0%95%EB%82%A8%EC%97%AD%EC%A4%91%EC%95%99%EC%A0%90" target="_blank">투썸플레이스 강남역중앙점</a><br>
+                <span class="muted">서울 강남구 테헤란로1길 16 삼원빌딩</span></td>
               </tr>
             </tbody>
           </table>
